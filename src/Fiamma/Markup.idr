@@ -4,6 +4,12 @@ data Attr = MkAttr String String
 
 data Attribute = MkAttribute (List Attr)
 
+instance Semigroup Attribute where
+	(MkAttribute xs) <+> (MkAttribute ys) = MkAttribute (xs <+> ys)
+
+instance Monoid Attribute where
+	neutral = MkAttribute neutral
+
 mutual
 	data MarkupM a
 		= MkElement String (Maybe Markup) (List Attr) (MarkupM a)
