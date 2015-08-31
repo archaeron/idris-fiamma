@@ -1,0 +1,4 @@
+package fiamma
+
+main = Fiamma
+sourcedir = src
