@@ -45,6 +45,11 @@ infixl 4 <!>
 (<!>) : Attributable a => a -> Attribute -> a
 (<!>) = withAttribute
 
+instance Functor MarkupM where
+	map f (MkElement el kids attrs rest) = MkElement el kids attrs (map f rest)
+	map f (MkContent s rest) = MkContent s (map f rest)
+	map f (MkReturn a) = MkReturn (f a)
+
 mutual
 	instance Applicative MarkupM where
 		pure = MkReturn
