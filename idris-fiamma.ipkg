@@ -1,4 +1,7 @@
 package fiamma
 
-main = Fiamma
 sourcedir = src
+modules = Test
+main = Test
+
+opts = ""

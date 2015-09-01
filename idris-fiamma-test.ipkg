@@ -1,4 +1,4 @@
-package fiammaFest
+package fiammaTest
 
 sourcedir = src
 modules = Test
