@@ -1,8 +1,0 @@
-package fiammaFest
-
-sourcedir = src
-modules = Test
-executable = idrisFiammaTest
-main = Test
-
-opts = ""
