@@ -59,8 +59,13 @@ mutual
 				a' <- a
 				return (f' a')
 
-
 	instance Monad MarkupM where
 		(>>=) (MkElement el kids attrs rest) f = MkElement el kids attrs (rest >>= f)
 		(>>=) (MkContent s rest) f = MkContent s (rest >>= f)
 		(>>=) (MkReturn a) f = f a
+
+instance Semigroup (MarkupM a) where
+  x <+> y = x *> y
+
+instance Monoid (MarkupM Unit) where
+  neutral = MkReturn ()
