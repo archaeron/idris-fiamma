@@ -1,8 +1,6 @@
 package fiamma
 
 sourcedir = src
-modules = Test
+modules = Main
 executable = idrisFiammaTest
-main = Test
-
-opts = ""
+main = Main
