@@ -1,6 +1,12 @@
 package fiamma
 
 sourcedir = src
-modules = Main
-executable = idrisFiammaTest
-main = Main
+modules
+    = Fiamma
+    , Fiamma.Markup
+    , Fiamma.Renderer
+    , Fiamma.Attributes
+    , Fiamma.Html
+    , Test.Html
+
+tests = Test.Html.testHtml

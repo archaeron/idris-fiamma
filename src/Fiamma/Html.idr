@@ -2,6 +2,8 @@ module Fiamma.Html
 
 import Fiamma.Markup
 
+%access public export
+
 a : Markup -> Markup
 a = parent "a"
 abbr : Markup -> Markup

@@ -2,6 +2,9 @@ module Fiamma.Renderer
 
 import Fiamma.Markup
 
+%access public export
+
+--| A NOde
 data Node
 	= Element String (List Attr) (List Node)
 	| Text String

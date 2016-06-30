@@ -1,8 +1,7 @@
-module Main
+module Test.Html
 
 import Fiamma
 
---| Doc
 doc : Markup
 doc = html <!> lang "en" $ do
 	head $ do
@@ -16,6 +15,16 @@ doc = html <!> lang "en" $ do
 		h1 $ text "OMG HAI LOL"
 		p $ text "This is clearly the best Markup DSL ever invented."
 
-main : IO ()
-main =
-	putStrLn $ renderMarkup doc
+assertEq : Eq a => (given : a) -> (expected : a) -> IO ()
+assertEq g e = if g == e
+    then putStrLn "Test Passed"
+    else putStrLn "Test Failed"
+
+assertNotEq : Eq a => (given : a) -> (expected : a) -> IO ()
+assertNotEq g e = if not (g == e)
+    then putStrLn "Test Passed"
+    else putStrLn "Test Failed"
+
+export
+testHtml : IO ()
+testHtml = assertEq (renderMarkup doc) ""

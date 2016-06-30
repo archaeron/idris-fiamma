@@ -2,6 +2,8 @@ module Fiamma.Attributes
 
 import Fiamma.Markup
 
+%access public export
+
 accept : String -> Attribute
 accept = attribute "accept"
 acceptCharset : String -> Attribute
